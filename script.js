@@ -28,15 +28,28 @@ for (let j = 0; j < cells.length; j++) {
 }
 }
 }
+
+function placeMark() {
+    let cell = document.querySelectorAll('.cell')
+for (let i = 0; i < 9; i++) {
+    cell[i].addEventListener('click', function() {
+        cell[i].innerText = playerX.mark
+    }) 
+    
+    }
+}
+
 return {
-    renderGameBoard: renderGameBoard,
-    board: board
+    placeMark, 
+    renderGameBoard, 
+    board
 }
 })()
 
 //running rendergameboard function
 
 gameBoard.renderGameBoard()
+gameBoard.placeMark()
 
 
 //gameflow
@@ -57,4 +70,11 @@ function createPlayer(mark) {
 
 let playerX = createPlayer('X')
 let playerO = createPlayer('O')
+
+//placemark function
+
+
+
+
+
 

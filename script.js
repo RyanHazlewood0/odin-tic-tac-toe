@@ -27,16 +27,16 @@ function renderGameBoard() {
     const boardDiv = document.getElementById('gameBoardDiv')
     const rows = document.getElementsByClassName('row')
    
-    for (let i = 0; i < rows.length; i++) {
-const cells = rows[i].children
-for (let j = 0; j < cells.length; j++) {
+ for (let i = 0; i < rows.length; i++) {
+ const cells = rows[i].children
+ for (let j = 0; j < cells.length; j++) {
     if (board[i][j] !== null) {
         cells[j].innerText = board[i][j]
     } else {
         cells[j].innerText = ''
-    }
-}
-}
+         }
+      }
+   }
 }
 
 function switchPlayer() {
@@ -47,16 +47,20 @@ if (activePlayer === playerX) {
 }
 }
 
+
 function placeMark() {
+
     let cell = document.querySelectorAll('.cell')
-for (let i = 0; i < 9; i++) {
-    cell[i].addEventListener('click', function() {
-        cell[i].innerText = activePlayer.mark
-        switchPlayer()
-    }) 
-    
+    for (let i = 0; i < 9; i++) {
+        cell[i].addEventListener('click', function() {
+            if (cell[i].innerText === '') 
+                cell[i].innerText = activePlayer.mark
+                switchPlayer()
+        })
     }
 }
+
+
 
 return {
     placeMark, 
@@ -65,17 +69,11 @@ return {
 }
 })()
 
-//running rendergameboard function
 
 gameBoard.renderGameBoard()
 gameBoard.placeMark()
 
 
-//gameflow
-
-let gameFlow = (() => {
-
-})()
 
 
 

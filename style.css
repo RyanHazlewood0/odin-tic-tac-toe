@@ -22,4 +22,19 @@ body {
     align-items: center;
     font-size: 24px;
     font-size: 60px;
+    color: orange;
+    background-color: beige;
+}
+
+#reset {
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 175px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid black;
 }
